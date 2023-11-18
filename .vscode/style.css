@@ -1,0 +1,322 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+/* aqui em cima foi usado o * para dar um comando regra para todo codigo restante, esse comando foi um reset onde foi retirado o  margin e o padding que são padrões do navegador*/
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(225, 225, 225, 0.2);
+  --switch-bg-url: url(./assets/MoonStars.svg);
+  /* comando root, esta sendo utilizado aqui pera gerar variaveis*/
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/Sun.svg);
+
+  /* este codigo esta ligando class light do html ao css e estibulando que ele é uma variavel*/
+}
+
+body {
+  background-image: var(--bg-url);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  height: 100vh;
+}
+/*background-color (define a cor do fundo); background-image (define uma imagem de fundo); background-repeat (define a maneira como a imagem de fundo é posicionada)*/
+
+/*O background trata do fundo dos elementos, quase sempre é envolvido com cores */
+
+/* atalho 
+atalhos são formas de simplificar o codigo para não deixalo muito estenço 
+exemplo 
+background: color image repeat position/size 
+background: url (./assets/bg-mobile.jpg) no-repeat top center/cover; */
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+/* este comando foi adquirido no google fontes e serve para programar a fonte de texto que sera utilizada no projeto */
+
+/* o comando * serve como seletor universal sendo assim esse comando ira servir para todos os elemntos dentro do body, ou seja todos elementos do body estaram a merce de suas regras no caso aqui foi utilizado para manter todo o texto que estiver dentro do body na fonte inter e na cor branca */
+
+#container {
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+  /*margin: auto; é um comando para centralizar as margens da caixa */
+
+  /* # é usado como seletor de id asim #conteiner linca com o id container da pagina html*/
+
+  /*width comando para definir tamanho da caixa */
+}
+
+/*profile*/
+#profile {
+  text-align: center;
+  padding: 24px;
+  /* dois coomandos usados ali para centralizr o link do instagram */
+}
+
+#profile img {
+  display: block;
+  width: 112px;
+  margin: auto;
+  padding: 24px;
+  /*img comando para buscar recurso de imagem do projeto html*/
+
+  /*img é um elemento inline, em elementos inline não é posivel aplicar o comando margin: auto;*/
+
+  /* para aplicar margin: auto; em elementos inline é preciso tranformalos em elementos block para isso foi usado o comando display: block;*/
+}
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+  /* adicionar p significa programar o paragrafo adicionado no html */
+}
+
+/* switch */
+
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+  /*margin 0 auto é o comando de centralizar elementos com propriedade block que é uma maneira bem diferente doque a centralisação de elementos inline */
+
+  /* um pequeno ajuste para programar o botão switch o tornando relativo, sendo assim o position absolut logo a baixo foi afetado, permitindo assim o botão se mover  */
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+
+  animation: slide-back 0.4s;
+
+  /*tranform é um comando que permite tranformar elementos, muito util para mover elementos com presição pela pagina */
+  /*com esse pequeno comando de posição podemos definir elementos block uns sobrepostos a outros, e usando o z-index podemos definir exatamente a camada na qual queremos que ele fique, esse comando tambem libera propriedades adicionais nos permitindo colocar o elemento aode desejarmos */
+
+  /* elementos inline se comportão em linha e elementos block se comportão em camadas um embaixo do outro */
+
+  /* codigos para programar o botão que mudara a pagina de dark pra light*/
+}
+
+.light #switch button {
+  animation: slide-in 0.4s forwards;
+
+  /* como aqui esta programado a posição right e ali em cima esta a posição left no outro elemento, e foi programado com position relative isso vai permitir o botão ir de um lado para o outro quando acionado */
+}
+
+#switch button:hover {
+  /*programando a sombra ao pasar o mause no botão */
+
+  outline: 8px solid var(--highlight-color);
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  border-radius: 9999px;
+
+  /*codigos para programar a caixinha que cobre o botão switch*/
+
+  /* span tem padrão inline */
+}
+
+/*links*/
+ul {
+  list-style: none;
+  /* none significa nenhum, é um comando para retirar alguma efeito existente na pagina*/
+
+  display: flex;
+  /* flex simplificadamente serve para alinhar as coisas de forma flexivel, o comando flex tambem pode substituir a qualidade inline*/
+
+  flex-direction: column;
+  /* serve para alinhar o flex em coluna */
+
+  gap: 16px;
+  /* o comanddo gap aqui esta servindo para adicionar espaços entre um botão e outro */
+
+  padding: 24px 0;
+  /*comando utilizado aqui para geral mais espaço entre os botões e os icones */
+}
+
+ul li a {
+  /* esses comandos todos servem para sentralizar os textos links da pagina */
+
+  display: flex;
+  /* o flex serve para deixar os elementos dentro da caixa fiquem um au lado outro de maneira flexivel, tentando sempre se encaixar de modo flexivel, no caso aqui ele ira fazer o a ocupar todo o espaço desponivel */
+
+  align-items: center;
+  /* comando usado para centralizar a linha dos textos centralizados pelo comando flex */
+
+  justify-content: center;
+  /* este comando alinhou o conteudo ao meio*/
+
+  /*o comando flex é um elemento inline e suas maneiras de centralisação são diferentes das dos elementos block*/
+
+  /* outra maneira de centralizar seria utilizando os comandos display: block; 
+  text-align: center; */
+
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  /* esse comando serve para dar estilo aos botões */
+
+  border: 1px solid var(--stroke-color);
+  /* outro comando de estilo para os botões*/
+
+  border-radius: 8px;
+  /* mas um comandode estilo, um arredondamento de borda */
+
+  backdrop-filter: blur(4px);
+  /* forma de colocar estilo blur nos botões, ele da um pequeno efeito embaçado */
+
+  /*-webkit- é um comando que foi adicionado na frente para tornar o blur utilizavel em sertos navegadores*/
+
+  text-decoration: none;
+  /* comando utilizado para retirar a linha padrão que fica estava em baixo do texto*/
+
+  font-weight: 500;
+  /*comando para editar o tamanhoi da fonte */
+
+  transition: background 0.2s;
+  /*comando que adiciona um efeito de transição ao pasar o mause por sima ativando assim o comando hover */
+}
+
+ul li a:hover {
+  /*hover serve como pseudo-selector, serve para adicionar efeitos que aparecem quando o usuario passa o mause em cima de determinadas coisas*/
+
+  background: var(--surface-color-hover);
+
+  border: 1.5px solid var(--text-color);
+  /* os efeitos adicionados são alterrações que serão vistas nos botões quando alguem passar o mause, os valores foram levemente auterados do ul li a anterior ao hover*/
+}
+
+#social-links {
+  display: flex;
+  /* para ordenar um ao lado do outro*/
+
+  justify-content: center;
+  /* comando para centralizar os icones */
+
+  padding: 24px 0;
+  /* adiciona espaço entre conteudo e a borda */
+
+  font-size: 24px;
+  /* comando aqui serviu para aumentar o tamnho dos icones */
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+  /*comando border radios foi utilizado para geral a bolinha branca redonda que envolve o icone quando passamos o mause em cima  */
+
+  /*pequena lista de comandos para alinhar e centralizar a bolinha programada pelo border-radius*/
+}
+
+#social-links a:hover {
+  /* codigo para adicinar efeitos aos icones*/
+
+  background: var(--highlight-color);
+  border-radius: 50%;
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+  /* pequenos ajustes de centralisação e de fonte com espasamento no footer */
+
+  /*elementos de texto são aline e são centralizados diferente de elementos block */
+}
+
+@media (min-width: 700px) {
+  /* media queries. aqui esta ervindo para fazer um ajuste de tela para uar outras imagens quando os despositivos forem diferentes e a tela padrão ficar ruim */
+
+  /* As media queries permitem adaptar a apresentação de um documento a diferentes dispositivos */
+
+  /* media queries só funcionam se o camando <meta name "viwport" estiver no html */
+
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+@keyframes slide-in {
+  /*@keyframes é o comando para programar animaçõesn no cs */
+
+  /*aqui estamos programando a animação do botão que muda de dia pra noite */
+
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 60%;
+    /*esquerda para a direita*/
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 60%;
+  }
+
+  to {
+    left: 0;
+
+    /*direita pra esquerda*/
+  }
+}
+/* padding é usado para adicinar espaço e preencher a caixa, ou seja colocar espaço de preechimento na caixa para fazer ajustes  */
+
+/*width é usado para definir largura*/
+/*heigth é usado para definir autura ( no entanto no css geralmente não é presiso coloca altura )*/
+
+/*todas as medidas são feitas px= pixels */
+
+/* margin e pedding= O margin é o espaço entre um elemento e seus vizinhos, enquanto o padding é o espaço entre o conteúdo do elemento e sua borda*/
+
+/* ao colocar valores de pedding o primeiro valor sera referente a encima e embaixo e o segundo valor sera o valor para as laterais */
+
+/* a tag a no css é um elemento inline */
+
+/* sobre o flex= A propriedade CSS "flex-direction: row" define que os itens dentro de um container flex devem ser posicionados em uma linha horizontal, enquanto "flex-direction: column" define que os itens devem ser posicionados em uma coluna vertical*/
+
+/* pseudoceletores= Os pseudosseletores são uma forma de selecionar elementos HTML com base em seu estado ou posição em relação a outros elementos */

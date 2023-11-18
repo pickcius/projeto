@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--ao criar arquivo index.html e excrever ! enter o app de programação cira uma base html basica para iniciar o projeto -->
+
+<html lang="pt-br">
+  <!--lembrar de colocar a linguagem em pt-br-->
+
+  <!--class comando que esta sendo utilizado para criar o modo light da pagina-->
+
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--esse codigo abaixo do head foi adquirido no google fontes e é necesario para adicionar a fonte desejada ao projeto -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto</title>
+    <!--title carrega o nome da pagina-->
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <!--link rel="stylesheet" é um comando para linkar o projeto html ao estilo css href= é o comando que indicara onde esta o css funciona parecido com o url do css, o ./ indica que o local esta neste projeto então "./style.css" forma esta ligação -->
+  </head>
+  <body>
+    <div id="container">
+      <!--id é forma de colocar indentificação na caixa, neste caso o id é container-->
+
+      <div id="profile">
+        <img src="./assets/avatarp.png" alt="panda vermelho fofinho." />
+        <!--img é um comando para adicionar imagens -->
+
+        <!--src= é o recurso onde pede para indentificar onde esta esta foto, tambem parecido com url do css ou href do html-->
+
+        <!--alt=é o recurso que descreve oque devemos informar caso por algum infortunio a imagem não seja encontrada pelo src-->
+
+        <p>@gabrielailurus</p>
+        <!-- p é utilizado para adicionar paragrafos, muito utilizado na programação que envolve textos-->
+      </div>
+
+      <div id="switch" onclick="toggleMode()">
+        <button></button>
+        <span> </span>
+      </div>
+      <!--onclick vai executar a função toggleMode, o atributo onclick ira perceber e procurar a função toggleMode no javaScript, essa esta sendo a parte de programação de JavaScript do botão, essa pequena linha que esta conectando o html ao javaScrpt -->
+
+      <!--tag button serve para programar botões simples que podem ser personalizados e atribuir funções de manipular eventos na WEB-->
+
+      <!--span é um container generico em linha para conteudo fraseado, que não representa nada por natureza. ele pode ser usado para agrupar elementos para fins de estilo -->
+
+      <ul>
+        <li>
+          <a href="#" target="_blank">Inscrever-se no NLW</a>
+        </li>
+
+        <li>
+          <a href="#" target="_blank">Baixar meu e-book</a>
+        </li>
+
+        <li>
+          <a href="#" target="_blank">Ver meu portifólio</a>
+        </li>
+        <li>
+          <a href="#" target="_blank">Conheça o Explorer</a>
+        </li>
+      </ul>
+      <!-- ul é o comando para criar listas não ordenadas-->
+
+      <!-- li é o comando para adicionar um item da lista-->
+
+      <!-- a comando para adicionar link-->
+
+      <!--target="_blank" comando para fazer o usuario abrir o link mas não fechar a aba de acesso inicial -->
+      <div id="social-links">
+        <a href="#" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="#" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="#" target="_blank">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+        <a href="#" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <!--comandos do script ionicons pego na internet-->
+      </div>
+
+      <footer>Feito com ♥ pela <a href="#">Rocketseat</a></footer>
+      <!--footer é um comando tag que é utilizado geralmente para fazer o roda pé do site-->
+    </div>
+    <!--div é um formato de caixa genérica que não tem estilos -->
+
+    <!--div é um elemento em block, img é um elemento inline -->
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <!--script asima foi adquirido no site ionicons e serve para adicionar icones a nossa pagina-->
+
+    <script src="./scritp.js"></script>
+    <!--esse comando scrpt ira conectar o html ao javaScrpt -->
+
+    <!--src é o comando para dizer em que local do mundo esta este scrpt-->
+  </body>
+  <!--    -->
+</html>
